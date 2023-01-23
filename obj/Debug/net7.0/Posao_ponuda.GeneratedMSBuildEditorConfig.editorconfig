@@ -1,0 +1,41 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Posao_ponuda
+build_property.RootNamespace = Posao_ponuda
+build_property.ProjectDir = /home/gaser/dev/Posao_ponuda/
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /home/gaser/dev/Posao_ponuda
+build_property._RazorSourceGeneratorDebug = 
+
+[/home/gaser/dev/Posao_ponuda/Views/employees/account.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvZW1wbG95ZWVzL2FjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/gaser/dev/Posao_ponuda/Views/employees/details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvZW1wbG95ZWVzL2RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/gaser/dev/Posao_ponuda/Views/employees/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvZW1wbG95ZWVzL2luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/gaser/dev/Posao_ponuda/Views/employees/insert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvZW1wbG95ZWVzL2luc2VydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/gaser/dev/Posao_ponuda/Views/employees/search.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvZW1wbG95ZWVzL3NlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/gaser/dev/Posao_ponuda/Views/employees/top.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvZW1wbG95ZWVzL3RvcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

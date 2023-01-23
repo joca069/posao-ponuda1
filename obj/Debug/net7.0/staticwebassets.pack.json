@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "/home/gaser/dev/Posao_ponuda/wwwroot/css/index.css",
+      "PackagePath": "staticwebassets/css/index.css"
+    },
+    {
+      "Id": "/home/gaser/dev/Posao_ponuda/wwwroot/css/insert.css",
+      "PackagePath": "staticwebassets/css/insert.css"
+    },
+    {
+      "Id": "/home/gaser/dev/Posao_ponuda/wwwroot/css/top.css",
+      "PackagePath": "staticwebassets/css/top.css"
+    },
+    {
+      "Id": "/home/gaser/dev/Posao_ponuda/wwwroot/img/insert.png",
+      "PackagePath": "staticwebassets/img/insert.png"
+    },
+    {
+      "Id": "/home/gaser/dev/Posao_ponuda/wwwroot/img/profile.png",
+      "PackagePath": "staticwebassets/img/profile.png"
+    },
+    {
+      "Id": "/home/gaser/dev/Posao_ponuda/wwwroot/js/package-lock.json",
+      "PackagePath": "staticwebassets/js/package-lock.json"
+    },
+    {
+      "Id": "/home/gaser/dev/Posao_ponuda/wwwroot/js/package.json",
+      "PackagePath": "staticwebassets/js/package.json"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.Posao_ponuda.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.Posao_ponuda.props",
+      "PackagePath": "build\\Posao_ponuda.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.Posao_ponuda.props",
+      "PackagePath": "buildMultiTargeting\\Posao_ponuda.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.Posao_ponuda.props",
+      "PackagePath": "buildTransitive\\Posao_ponuda.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

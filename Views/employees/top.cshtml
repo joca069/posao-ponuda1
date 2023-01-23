@@ -1,0 +1,35 @@
+
+<link rel="stylesheet" href="/css/top.css">
+
+
+
+<script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+
+
+	 <script>
+
+	 function htmlTableToExcel(type){
+	var data = document.getElementById('tblToExcl');
+	var excelFile = XLSX.utils.table_to_book(data, {sheet: "sheet1"});
+	XLSX.write(excelFile, { bookType: type, bookSST: true, type: 'base64' });
+	XLSX.writeFile(excelFile, 'ExportedFile:HTMLTableToExcel.' + type);
+	}
+
+	function redirect(){
+	
+	window.location.href = '/employees/insert'
+	}
+	 </script>
+	
+
+
+<div class="header">
+
+<button class="export" onClick="htmlTableToExcel('csv')">Export to csv</button>
+
+<button class="export" onClick="htmlTableToExcel('xlsx')">Export to xlsx</button>
+
+<button class="export" onClick="redirect()">Insert employee</button>
+
+
+</div>

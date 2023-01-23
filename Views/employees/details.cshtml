@@ -1,0 +1,117 @@
+
+
+
+<link rel="stylesheet" href="/css/index.css">
+
+<img src="/img/profile.png"  class="profile">
+
+<div class="info" id="info">
+
+
+<div style="font-size:30px;" >Ime:<span style="color:gray">@ViewData["ime"]</span> </div>
+
+
+<div style="font-size:30px;">Prezime:<span style="color:gray">@ViewData["prezime"]</span> </div>
+
+
+
+
+@{
+int? bruto=ViewData["bruto"] as int?;
+
+}
+
+<div style="font-size:30px;">Bruto:<span style="color:gray;float:right">@bruto RSD  <br><span id="euro"></span>  <br><span id="dolar"></span> </span> </div>
+
+
+<div style="font-size:30px;margin-top:100px;">PIO:<span style="color:red;float:right;" id="PIO"></div>
+
+<div style="font-size:30px;">Zdravstveno:<span style="color:red;float:right;" id="Zdravstvo"> </div>
+
+
+
+<div style="font-size:30px;margin-top:100px">Neto:<span style="color:gray;float:right" id="neto"> <br><span id="euro-neto"></span> or <br><span id="dolar-neto"></span> </span> </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+
+<script>
+
+//(int RSD)->[EUR,USD]
+async function conversion(rsd){
+	return [(await(await fetch("https://v6.exchangerate-api.com/v6/819a87cb6f93ab989e9f31d0/latest/RSD")).json()).conversion_rates.EUR * rsd ,(await(await fetch("https://v6.exchangerate-api.com/v6/819a87cb6f93ab989e9f31d0/latest/RSD")).json()).conversion_rates.USD * rsd ]
+}
+
+
+
+// ne znam tacno kako se racuna 
+function pio(pozitive){
+return (pozitive*2)/10
+}
+
+function zdravstveno(pozitive){
+return (pozitive)/10
+}
+
+
+ function generatePDF() {
+        
+        var element = document.getElementById('info');
+        element.style.width = '700px';
+        element.style.height = '900px';
+        var opt = {
+            margin:       0.1,
+            filename:     'myfile.pdf',
+            image:        { type: 'jpeg', quality: 1 },
+            html2canvas:  { scale: 2 },
+            jsPDF:        { unit: 'in', format: 'A3', orientation: 'portrait',precision: '12' }
+          };
+        
+        // choose the element and pass it to html2pdf() function and call the save() on it to save as pdf.
+        html2pdf().set(opt).from(element).save();
+      }
+
+
+async function main(){
+
+	const convr=await conversion(@bruto)
+	
+	const euro_out=document.getElementById("euro");
+	
+	const dolar_out=document.getElementById("dolar");
+	
+	euro_out.innerHTML=convr[0]+"EUR"
+	
+	dolar_out.innerHTML=convr[1]+"USD"
+	
+
+	
+	const Pio=pio(@bruto)
+	document.getElementById('PIO').innerHTML=-Pio+'RSD'
+	const Zdravstvo=zdravstveno(@bruto)
+	document.getElementById("Zdravstvo").innerHTML=-Zdravstvo+'RSD'
+	
+	//calculates neto 
+	const neto=@bruto - Pio - Zdravstvo;
+	const neto_conversion=await conversion(neto);
+	const netwrite=neto+"RSD <br> "+neto_conversion[0]+"EUR <br> "+neto_conversion[1]+"USD"
+	document.getElementById("neto").innerHTML=netwrite
+	
+
+}
+
+
+
+main()
+
+</script>
+
+<button onClick="generatePDF()">Convert to PDF</button>
+
+
+<a href="mailto:@ViewData["adresa"]">Send mail</a>
+
+</div>
+
+
+

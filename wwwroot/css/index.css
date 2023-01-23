@@ -1,0 +1,79 @@
+body
+{
+margin:0px;
+padding:0px;
+
+
+}
+
+a
+{
+	text-decoration:none;
+	color:inherit;
+
+}
+
+
+.main{
+
+margin-top:60px;
+
+}
+
+
+table, th, td {
+
+  	border: 1px solid black;
+  border-collapse: collapse;
+
+  font-size:60px;
+
+  padding:20px;
+
+
+  width:100vw;
+}
+
+
+.profile{
+
+	width:33vw;
+	margin-left:33vw;
+	
+	border-radius:50%;
+}
+
+.info{
+	
+	margin-left:20vw;
+	width:60vw;
+	position:relative;
+	
+
+	min-height:fit-content;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.left{
+	
+	width:50%;
+	height:100%;
+
+
+}
+
+
+.right{
+
+	width:calc( 50% - 1px);
+	border-left:1px solid black;
+
+}
+
+
+
+
+
+

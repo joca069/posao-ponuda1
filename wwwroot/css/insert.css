@@ -1,0 +1,40 @@
+
+
+body{
+
+	margin:0px;
+	padding:0px;
+
+
+}
+
+
+.main{
+	
+	width:50vw;
+	min-width:300px;
+	margin-left:25vw;
+	display: flex;
+	flex-direction: column;
+	
+
+}
+
+input{
+	
+	font-size:40px;
+	
+	margin:5px;
+	border:0px solid transparent;
+	border-bottom:1px solid black;
+}
+
+.img{
+
+	width:33vw;
+	margin-left:33vw;
+	
+	border-radius:40px;
+
+}
+

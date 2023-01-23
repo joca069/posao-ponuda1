@@ -1,0 +1,28 @@
+
+
+.header{
+	width:100vw;
+	position:fixed;
+	top:0px;
+
+	
+	z-index: 10;
+
+}
+
+.search{
+	float:left;
+	margin: auto;
+	width: 300px;
+	border:1px solid black;
+	border-radius:10px;
+	text-align:center;
+
+}
+
+.export{
+	color:blue;
+	float:right;
+}
+
+
