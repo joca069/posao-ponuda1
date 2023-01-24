@@ -13,6 +13,7 @@ using System.Data.SqlClient;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
+using Config;
 
 namespace _.Controllers;
 
@@ -25,7 +26,7 @@ public class employeesController:Controller{
 	public  IActionResult Index()
 	{
 	
-	SqlConnection connection=new SqlConnection("Database=posao;Server=localhost;user=SA;password=jocacar.123");
+	SqlConnection connection=new SqlConnection("Database="+Config.Database.DB+";Server="+Config.Database.DBIP+";user="+Config.Database.DBUSERNAME+";password="+Config.Database.DBPASSWORD+"");
 	connection.Open();
 
 	SqlCommand command = new SqlCommand("select count(id) from employees ", connection);
@@ -81,14 +82,16 @@ public class employeesController:Controller{
 	}
 	return body.Substring(start,end-start);
 	}
+	
 
+	//dodavanje radnika
 	[HttpPost]
 	public async Task<string> addEmployee()
 	{
 
 		var body = await new StreamReader(Request.Body).ReadToEndAsync();
 		
-		SqlConnection connection=new SqlConnection("Database=posao;Server=localhost;user=SA;password=jocacar.123");
+		SqlConnection connection=new SqlConnection("Database="+Config.Database.DB+";Server="+Config.Database.DBIP+";user="+Config.Database.DBUSERNAME+";password="+Config.Database.DBPASSWORD+"");
 		connection.Open();
 		
 		string sql="insert into employees(ime,prezime,pozicija,adresa,bruto_plata) values ('"+readParametar("ime",body)+"','"+readParametar("prezime",body)+"','"+readParametar("pozicija",body)+"','"+readParametar("adresa",body)+"',"+readParametar("bruto_plata",body)+" )";
@@ -114,12 +117,8 @@ public class employeesController:Controller{
 	string[] ime_prezime=id.Split("_");
 
 
-	ViewData["ime"]=ime_prezime[0];
-
-	ViewData["prezime"]=ime_prezime[1];
 	
-
-	SqlConnection connection=new SqlConnection("Database=posao;Server=localhost;user=SA;password=jocacar.123");
+	SqlConnection connection=new SqlConnection("Database="+Config.Database.DB+";Server="+Config.Database.DBIP+";user="+Config.Database.DBUSERNAME+";password="+Config.Database.DBPASSWORD+"");
 	connection.Open();
 
 	string sql="select top 1 * from employees where ime like '"+ime_prezime[0]+"' and prezime like '"+ime_prezime[1]+"' ";
