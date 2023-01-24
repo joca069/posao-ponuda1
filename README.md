@@ -1,14 +1,14 @@
-#Moj 
+ 
+### SQl za bazu i tabelu je u `U_bazi_podataka.sql`
 
 
-> SQl za bazu i tabelu je u `U_bazi_podataka.sql`
 
 
-## demostracija
-![](demostracija.mp4)
+### za front end nisam koristio nikakav framework (nije bilo potrebe) izporbavao sam vanima razor komponente 
 
 
-## za front end nisam koristio nikakav framework (nije bilo potrebe) izporbavao sam vanima razor komponente 
+
+### funkcije za izracunavanje neto plate nisu tacne ali se uvek mogu redefinisati
 
 
 
