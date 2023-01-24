@@ -56,6 +56,7 @@ public class employeesController:Controller{
 	args[i,o]=reader.GetString(o);
 	}
 	
+	//bruto plata da se convertuje u string
 	args[i,4]=""+reader.GetInt32(4);
 	i++;
 	}
